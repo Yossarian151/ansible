@@ -1,0 +1,11 @@
+---
+- hosts: all
+  remote_user: yossarian
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: create docker container
+    docker_container:
+      name: mycontainer
+      image: hello-world
+      state: started
